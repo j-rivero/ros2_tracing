@@ -18,9 +18,10 @@ jobs:
         #  required-ros-distributions: eloquent
       - uses: j-rivero/action-ros-ci@use_test_filter
         with:
-          package-name: tracetools
+          package-name: tracetools tracetools_test
           colcon-mixin-name: coverage-gcc
           colcon-mixin-repository: https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+          coverage-ignore-pattern:  */test* */tracetools_test/*
       - uses: codecov/codecov-action@master
         # Prevent being rate limited by only reporting coverage from the Ubuntu
         # build.
