@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Install lttng ppa
         run: |
-           apt-add-repository ppa:lttng/stable-2.10
-           apt-get update
-           apt-get install lttng-tools lttng-modules-dkms liblttng-ust-dev
-           apt-get install python3-babeltrace python3-lttng
+           sudo apt-add-repository -y ppa:lttng/stable-2.10
+           sudo apt-get update
+           sudo apt-get install -y lttng-tools lttng-modules-dkms liblttng-ust-dev
+           sudo apt-get install -y python3-babeltrace python3-lttng
       - uses: ros-tooling/setup-ros@master
         # with:
         #  required-ros-distributions: eloquent
